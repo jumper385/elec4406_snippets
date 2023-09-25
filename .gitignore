@@ -1,2 +1,15 @@
 **/*.fst
 **/*.cf
+
+**/db
+**/incremental_db
+**/output_files
+**/*.bak
+**/*.qsf
+**/*.qpf
+
+**/work
+**/*.wlf
+**/*.mti
+**/*.mpf
+**/*.qws

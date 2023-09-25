@@ -1,22 +1,22 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 
-ENTITY dff IS
+ENTITY d_flip_flop IS
     PORT (
         d, clk, rst : IN STD_LOGIC;
         q : OUT STD_LOGIC
     );
-END dff;
+END d_flip_flop;
 
-ARCHITECTURE rtl OF dff IS
+ARCHITECTURE rtl OF d_flip_flop IS
 
 BEGIN
 
     dff_proc : PROCESS (clk, rst)
     BEGIN
-        IF rst = '1' THEN
+        IF rst = '0' THEN
             q <= '0';
-        ELSIF rising_edge(clk) THEN
+        ELSIF falling_edge(clk) THEN
             q <= d;
         END IF;
     END PROCESS dff_proc;
