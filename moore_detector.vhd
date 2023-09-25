@@ -16,9 +16,9 @@ BEGIN
 
     sync_proc : PROCESS (clk, rst)
     BEGIN
-        IF rst = '1' THEN
+        IF rst = '0' THEN
             ps <= sa;
-        ELSIF rising_edge(clk) THEN
+        ELSIF falling_edge(clk) THEN
             ps <= ns;
         END IF;
     END PROCESS sync_proc;
