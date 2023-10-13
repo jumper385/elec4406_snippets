@@ -3,7 +3,7 @@ USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
 
 ENTITY shift_register IS
-    GENERIC (N : INTEGER := 8); -- bus width
+    GENERIC (N : INTEGER := 5); -- bus width
     PORT (
         sd, clk, rst, pload : IN STD_LOGIC;
         pd : IN STD_LOGIC_VECTOR(N - 1 DOWNTO 0);
@@ -17,7 +17,7 @@ BEGIN
 
     register_setup : PROCESS (clk, rst)
     BEGIN
-        IF rst = '1' THEN
+        IF rst = '0' THEN
             pout <= (OTHERS => '0');
         ELSIF rising_edge(clk) THEN
             IF pload = '1' THEN
