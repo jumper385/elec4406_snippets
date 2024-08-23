@@ -3,7 +3,7 @@ VHD_FILES := $(wildcard *.vhd)
 ELAB_TARGETS := $(VHD_FILES:.vhd=)
 
 # Custom entity name and stop time for simulation
-ENTITY_NAME := shift_register_tb
+ENTITY_NAME := counter.vhd
 STOP_TIME := 10000000ns
 
 # Default target
